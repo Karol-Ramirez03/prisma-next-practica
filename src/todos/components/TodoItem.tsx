@@ -23,7 +23,6 @@ export const TodoItem = ({ todo, toggleTodo }: Props) => {
   const onToggleTodo = async() => {
 
     try {
-      
       startTransition( () => toggleTodoOptimistic( !todoOptimistic.complete ) );
       
       await toggleTodo( todoOptimistic.id, !todoOptimistic.complete );
