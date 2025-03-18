@@ -1,7 +1,7 @@
 
 interface Props {
   tittle : String;
-  children:React.ReactNode
+  children: React.ReactNode
 }
 
 export const WidgetItem = ({tittle, children}:Props) => {
