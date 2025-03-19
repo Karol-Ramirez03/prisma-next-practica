@@ -20,9 +20,9 @@ export const NewTodo = () => {
     e.preventDefault();
     if ( description.trim().length === 0 ) return;
 
-    await addTodo(description);
+    await todosApi.createTodo(description);
+    router.refresh();
     setDescription('');
-    // router.refresh();
   }
   
   // const deleteCompleted = async() => {

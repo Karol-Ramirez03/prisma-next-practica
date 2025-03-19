@@ -14,8 +14,7 @@ const sleep = (seconds: number = 0):Promise<boolean> => {
 
 export const updateTodo = async( id: string, complete: boolean ):Promise<Todo> => {
 
-//   TODO: 
-//   await sleep(2);
+  // await sleep(2);
 
   const body = { complete };
 
