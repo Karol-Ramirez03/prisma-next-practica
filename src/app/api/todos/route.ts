@@ -52,3 +52,21 @@ export async function POST(request: Request) {
     return NextResponse.json( error, { status: 400 } );
   }
 }
+
+export async function DELETE(request: Request) { 
+
+  const user = await getUserSessionServer();
+
+  if ( !user ) {
+    return NextResponse.json('No autorizado',{ status: 401 });
+  }
+
+  try {
+
+    await prisma.todo.deleteMany({ where: { complete: true, userId: user.id } });
+    return NextResponse.json('Borrados');
+    
+  } catch (error) {
+    return NextResponse.json( error, { status: 400 } );
+  }
+}
